@@ -1,0 +1,12 @@
+# see https://github.com/github/gitignore/blob/main/Python.gitignore
+
+__pycache__/
+
+build/
+dist/
+
+env/
+venv/
+
+*.egg-info
+
