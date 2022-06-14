@@ -1,4 +1,4 @@
-# Basic utility to locate python modules from the command line 
+# Utility to locate python modules from the command line 
 
 This module is pre-alpha level.
 
