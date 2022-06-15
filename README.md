@@ -1,18 +1,26 @@
 # Utility to locate python modules from the command line 
 
-This module is pre-alpha level.
 
-Meant to be used from the command line by invoking ```python -mwhere module```
-A thin layer around importlib to display the location of a module or package.
-It works also for native namespace packages that can span across multiple foldrers. 
+## Warning
+This project installs a module called ```where```
+which might collide with modules of the same name from other pypi distributions like [where](https://pypi.org/project/where/).
+Make sure to install the one you are looking for.
 
-# Usage
+
+
+## Usage
+
+Used from the command line by invoking ```python -mwhere <module>```
+The module is a thin layer around ```importlib``` to display the location of a module or package.
+It works also for native namespace packages in which case it will list the containing folders.
+
 
 ```console
-python -mwhere.py [-h] [-r] module
+python -mwhere [-h] [-r] module
 ```
 
-# Options
+## Command line options
+The recurse ```-r``` option will also list the contained submodules.
 
 ```console
 positional arguments:
@@ -23,7 +31,7 @@ optional arguments:
   -r, --recurse  iterates over package contents
 ```
 
-# Locate a module or package
+## Some Examples
 ```console
 $> python -mwhere sysconfig 
 origin C:\Users\...\envs\py38\lib\sysconfig.py
@@ -31,10 +39,7 @@ origin C:\Users\...\envs\py38\lib\sysconfig.py
 $> python -mwhere pandas      
 origin C:\Users\...\envs\py38\lib\site-packages\pandas\__init__.py
 location C:\Users\...\envs\py38\lib\site-packages\pandas
-```
 
-# List package contents with recurse option
-```console
 $> python -mwhere pandas -r 
 origin C:\Users\...\envs\py38\lib\site-packages\pandas\__init__.py
 location C:\Users\...\envs\py38\lib\site-packages\pandas
@@ -43,6 +48,7 @@ C:\Users\...\envs\py38\lib\site-packages\pandas\testing.py
 C:\Users\...\envs\py38\lib\site-packages\pandas\_typing.py
 C:\Users\...\envs\py38\lib\site-packages\pandas\_version.py
 C:\Users\...\envs\py38\lib\site-packages\pandas\__init__.py
-Total size 66482
+...
 ```
 
+TODO Add tests

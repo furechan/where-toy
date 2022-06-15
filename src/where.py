@@ -9,7 +9,7 @@ from pathlib import Path
 # TODO use pkgutil to iter modules ?
 
 
-def find_module(module, recurse=False):
+def where_module(module, recurse=False):
     """ locates and displays module location/contents """
 
     spec = importlib.util.find_spec(module)
@@ -28,7 +28,7 @@ def find_module(module, recurse=False):
 
     if recurse and spec.submodule_search_locations:
         locations = spec.submodule_search_locations
-        files = [f for p in locations for f in Path(p).glob("*.py")]
+        files = [f for p in locations for f in Path(p).rglob("*.py")]
         total_size = 0
         for file in files:
             size = file.stat().st_size
@@ -40,7 +40,7 @@ def find_module(module, recurse=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, prog='python -mwhere')
-    parser.add_argument('-r', '--recurse', action='store_true', help="iterates over package contents")
+    parser.add_argument('-r', '--recurse', action='store_true', help="include sub-modules")
     parser.add_argument('module', help="module or package name")
 
     options = parser.parse_args()
@@ -48,7 +48,7 @@ def main():
     module = options.module
     recurse = options.recurse
 
-    find_module(module, recurse=recurse)
+    where_module(module, recurse=recurse)
 
 
 if __name__ == "__main__":
