@@ -1,4 +1,4 @@
-""" Utility to locate modules in the python path """
+""" Utility to locate python modules from the command line """
 
 import argparse
 import importlib.util
@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 def where_module(module, recurse=False):
-    """ locates and displays module location/contents """
+    """ Locates and displays module location/contents """
 
     spec = importlib.util.find_spec(module)
 

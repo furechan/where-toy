@@ -2,11 +2,16 @@
 
 
 ## Warning
+
 This project installs a module called ```where```
 which might collide with modules of the same name from other pypi distributions like [where](https://pypi.org/project/where/).
 Make sure to install the one you are looking for.
 
+## Installation
 
+You can install the module with pip
+
+```pip install git+ssh://git@github.com/furechan/where-toy.git```
 
 ## Usage
 
@@ -20,6 +25,7 @@ python -mwhere [-h] [-r] module
 ```
 
 ## Command line options
+
 The recurse ```-r``` option will also list the contained submodules.
 
 ```console
@@ -32,6 +38,7 @@ optional arguments:
 ```
 
 ## Some Examples
+
 ```console
 $> python -mwhere sysconfig 
 origin C:\Users\...\envs\py38\lib\sysconfig.py
