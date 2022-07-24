@@ -11,7 +11,9 @@ Make sure to install the one you are looking for.
 
 You can install the module with pip
 
-```pip install git+ssh://git@github.com/furechan/where-toy.git```
+```console
+pip install git+ssh://git@github.com/furechan/where-toy.git
+```
 
 ## Usage
 
