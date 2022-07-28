@@ -1,7 +1,10 @@
-# makefile should be tab indented!
+# for use in windows only ...
+# requires setuptools build twine
+# makefile should be tab indented !
 
-name = where-toy
 version = 0.0.1
+name = where-toy
+lcname = where_toy
 
 dist: FORCE
 	call python -m build .
@@ -9,7 +12,7 @@ dist: FORCE
 
 dump: FORCE
 	tar -tvf dist/$(name)-$(version).tar.gz
-	unzip -l dist/$(name)-$(version)-py3-none-any.whl
+	unzip -l dist/$(lcname)-$(version)-py3-none-any.whl
 
 install: FORCE
 	python setup.py develop
