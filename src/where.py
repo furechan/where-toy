@@ -5,6 +5,8 @@ import importlib.util
 
 from pathlib import Path
 
+__version__ = '0.0.1'
+
 
 # TODO use pkgutil to iter modules ?
 
