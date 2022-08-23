@@ -1,13 +1,16 @@
 """ Utility to locate python modules from the command line """
 
+
+import sys
 import argparse
 import importlib.util
 
 from pathlib import Path
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 
+# TODO add Tests
 # TODO use pkgutil to iter modules ?
 
 
@@ -18,7 +21,7 @@ def where_module(module, recurse=False):
 
     if not spec:
         print("%s not found!" % module)
-        return
+        sys.exit(1)
 
     if spec.origin:
         file = Path(spec.origin)
@@ -42,7 +45,7 @@ def where_module(module, recurse=False):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__, prog='python -mwhere')
-    parser.add_argument('-r', '--recurse', action='store_true', help="include sub-modules")
+    parser.add_argument('-r', '--recurse', action='store_true', help="iterates over package sub-modules")
     parser.add_argument('module', help="module or package name")
 
     options = parser.parse_args()
