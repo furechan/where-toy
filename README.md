@@ -1,6 +1,6 @@
 # Utility to locate python modules from the command line 
 
-Python command line utility to locate a python module in the python path.
+Python command line utility to locate any module in the python path.
 The module is a thin layer around ```importlib``` to display
 the location and containing folders of a module or package.
 The script exits with an error code if the module is not found.
@@ -23,22 +23,8 @@ optional arguments:
 Please note the recurse ```-r``` option to list the package sub-modules.
 
 
-## Installation
 
-You can install the latest version of this module with pip
-
-```console
-pip install git+ssh://git@github.com/furechan/where-toy.git
-```
-
-> **Note**
-This project installs a module called ```where```
-which might collide with modules of the same name from other pypi distributions
-like [where](https://pypi.org/project/where/).
-Make sure to install the one you are looking for!
-
-
-## Some Examples
+## Examples
 
 ```console
 $> python -mwhere sysconfig 
@@ -58,3 +44,18 @@ C:\Users\...\envs\py38\lib\site-packages\pandas\_version.py
 C:\Users\...\envs\py38\lib\site-packages\pandas\__init__.py
 ...
 ```
+
+## Installation
+
+> **Note**
+This project installs a module called ```where```
+which might collide with modules of the same name from other pypi distributions
+like [where](https://pypi.org/project/where/).
+Make sure to install the one you are looking for!
+
+You can install the latest version of this module with pip
+
+```console
+pip3 install git+ssh://git@github.com/furechan/where-toy.git
+```
+
