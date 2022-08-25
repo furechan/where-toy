@@ -15,7 +15,7 @@ remove: FORCE
 	python setup.py develop -u
 
 upload: FORCE
-	call twine upload --repository testpypi dist/*
+	call twine upload dist/*
 
 FORCE:
 

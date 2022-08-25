@@ -7,7 +7,7 @@ import importlib.util
 
 from pathlib import Path
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 
 # TODO add Tests
@@ -15,7 +15,7 @@ __version__ = '0.0.2'
 
 
 def where_module(module, recurse=False):
-    """ Locates and displays module location/contents """
+    """ locates and displays module location/contents """
 
     spec = importlib.util.find_spec(module)
 
