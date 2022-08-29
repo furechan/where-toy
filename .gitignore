@@ -1,12 +1,16 @@
-# see https://github.com/github/gitignore/blob/main/Python.gitignore
-
+.idea/workspace*.xml
+.ipynb_checkpoints/
+.pytest_cache/
 __pycache__/
-
+*.egg-info/
+temp/*
 build/
 dist/
-
-env/
-venv/
-
-*.egg-info
-
+.tox/
+*.bak
+*.log
+*.pyc
+*.pyd
+*.exp
+*.lib
+*.so
