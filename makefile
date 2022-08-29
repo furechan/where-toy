@@ -18,7 +18,7 @@ upload: FORCE
 	call twine upload dist/*
 
 tox: FORCE
-	tox --workdir %USERPROFILE%\Documents\Tox
+	tox --workdir %USERPROFILE%\Parking\where-toy.tox
 
 
 FORCE:
