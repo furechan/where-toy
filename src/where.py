@@ -8,7 +8,7 @@ from pathlib import Path
 
 __version__ = '0.0.3'
 
-# TODO use pkgutil to iter modules ?
+# see also pkgutil to iter modules
 
 
 def where_module(module, recurse=False):
