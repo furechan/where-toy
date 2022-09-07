@@ -5,6 +5,7 @@ The module is a thin layer around ```importlib``` to display
 the location and containing folders of a module or package.
 The script exits with an error code if the module is not found.
 
+
 ## Usage
 
 Used from the command line by invoking ```python -mwhere module```
@@ -21,7 +22,6 @@ optional arguments:
 ```
 
 Please note the recurse ```-r``` option to list the package sub-modules.
-
 
 
 ## Examples
