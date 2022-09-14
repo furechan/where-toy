@@ -1,5 +1,29 @@
 [build-system]
-# PEP 508 specifications.
-# requires = ["setuptools>=42", "wheel"]
 requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "where-toy"
+requires-python = ">=3.7"
+description = "Utility to locate python modules from the command line"
+keywords = ["utility", "command-line"]
+authors = [{"name" = "furechan", "email" = "furechan@xsmail.com"}]
+urls = {"project" = "https://github.com/furechan/where-toy"}
+readme = "README.md"
+license = {text = "MIT License"}
+dependencies = []
+classifiers = [
+    "Topic :: Utilities",
+    "Development Status :: 2 - Pre-Alpha",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License"
+]
+dynamic = ["version"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.dynamic]
+version = {attr = "where.__version__"}
+
+
