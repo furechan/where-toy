@@ -24,6 +24,7 @@ def get_config(folder):
 
 @task
 def clean(ctx):
+    """ Clean build and dist folders """
     patterns = ['build', 'dist']
     for pattern in patterns:
         ctx.run("rm -rf {}".format(pattern))
@@ -31,12 +32,14 @@ def clean(ctx):
 
 @task
 def build(ctx):
+    """ Build wheel with python -mbuild """
+
     ctx.run("python -mbuild --wheel")
 
 
 @task
 def publish(ctx, test_only=False):
-    """ Build project(s) from current folder or sub-folders """
+    """ Publish project with twine """
 
     if test_only:
         ctx.run("twine upload --repository testpypi dist/*")

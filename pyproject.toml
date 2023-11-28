@@ -19,6 +19,9 @@ classifiers = [
     "License :: OSI Approved :: MIT License"
 ]
 
+[project.optional-dependencies]
+dev = [ "pytest", "invoke", "build", "twine" ]
+
 [tool.hatch.build]
 sources = ["src"]
 
