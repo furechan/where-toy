@@ -2,9 +2,6 @@ from where import where_module
 
 
 def test_where():
-    res = where_module("sys")
-    assert res is not None
-
-    res = where_module("abcdefg")
+    res = where_module("where")
     assert res is None
 

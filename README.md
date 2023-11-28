@@ -5,20 +5,25 @@ The module is a thin layer around ```importlib``` to display
 the location and containing folders of a module or package.
 The script exits with an error code if the module is not found.
 
+> **Warning**
+This project installs a module called ```where```
+which might collide with the pypi module called
+[where](https://pypi.org/project/where/).
+Make sure to install the one you are looking for!
 
 ## Usage
 
 Used from the command line by invoking ```python -mwhere module```
 
 ```console
-python -mwhere [-h] [-r] module
+python -mwhere [-h] [-t] module
 
 positional arguments:
   module         module or package name
 
 optional arguments:
   -h, --help     show this help message and exit
-  -r, --recurse  iterates over package sub-modules
+  -t, --tree     print tree of files
 ```
 
 Please note the recurse ```-r``` option to list the package sub-modules.
@@ -28,34 +33,22 @@ Please note the recurse ```-r``` option to list the package sub-modules.
 
 ```console
 $> python -mwhere sysconfig 
-origin C:\Users\...\envs\py38\lib\sysconfig.py
+/Users/bob/envs/py38/lib/sysconfig.py
 
 $> python -mwhere pandas      
-origin C:\Users\...\envs\py38\lib\site-packages\pandas\__init__.py
-location C:\Users\...\envs\py38\lib\site-packages\pandas
+/Users/bob/envs/py38/lib/site-packages/pandas/__init__.py
 
-$> python -mwhere pandas -r 
-origin C:\Users\...\envs\py38\lib\site-packages\pandas\__init__.py
-location C:\Users\...\envs\py38\lib\site-packages\pandas
-C:\Users\...\envs\py38\lib\site-packages\pandas\conftest.py
-C:\Users\...\envs\py38\lib\site-packages\pandas\testing.py
-C:\Users\...\envs\py38\lib\site-packages\pandas\_typing.py
-C:\Users\...\envs\py38\lib\site-packages\pandas\_version.py
-C:\Users\...\envs\py38\lib\site-packages\pandas\__init__.py
-...
+$> python -mwhere where -t 
+/Users/bob/Projects/Python/where-toy/src/where
+├── __init__.py
+├── __main__.py
+└── utils.py
 ```
 
 ## Installation
 
-> **Note**
-This project installs a module called ```where```
-which might collide with modules of the same name from other pypi distributions
-like [where](https://pypi.org/project/where/).
-Make sure to install the one you are looking for!
-
 You can install the latest version of this module with pip
 
 ```console
-pip3 install git+ssh://git@github.com/furechan/where-toy.git
+pip3 install git+https://github.com/furechan/where-toy.git
 ```
-
