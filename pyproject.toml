@@ -8,8 +8,8 @@ version = "0.0.5"
 requires-python = ">=3.7"
 description = "Utility to locate python modules from the command line"
 keywords = ["utility", "command-line"]
-authors = [{"name" = "furechan", "email" = "furechan@xsmail.com"}]
-urls = {"project" = "https://github.com/furechan/where-toy"}
+authors = [ {"name" = "furechan", "email" = "furechan@xsmail.com"} ]
+urls = { "homepage" = "https://github.com/furechan/where-toy" }
 readme = "README.md"
 license = { text = "MIT License" }
 classifiers = [

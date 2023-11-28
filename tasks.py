@@ -1,11 +1,7 @@
 """ tasks file (see invoke.py) """
 
-import os
-import sys
 import toml
-import shutil
 import logging
-import jmespath
 
 from invoke import task
 from pathlib import Path
