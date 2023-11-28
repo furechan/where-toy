@@ -49,3 +49,5 @@ def where_module(name, tree=False):
     elif spec.origin:
         file = Path(spec.origin)
         print(file)
+
+    return spec
