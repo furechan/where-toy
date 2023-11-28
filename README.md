@@ -23,7 +23,7 @@ positional arguments:
 
 optional arguments:
   -h, --help     show this help message and exit
-  -t, --tree     print tree of files
+  -t, --tree     print package contents as a tree
 ```
 
 Please note the `-t` option to print the package contents as a tree.
