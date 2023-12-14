@@ -23,6 +23,5 @@ classifiers = [
 dev = [ "pytest", "invoke", "build", "twine" ]
 
 [tool.hatch.build]
-only-packages = true
-sources = ["src"]
+packages = ["src/where"]
 
