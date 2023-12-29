@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "where-toy"
-version = "0.0.7"
+version = "0.0.8"
 requires-python = ">=3.7"
 description = "Utility to locate python modules from the command line"
 keywords = ["utility", "command-line"]
@@ -21,6 +21,9 @@ classifiers = [
 
 [project.optional-dependencies]
 dev = [ "pytest", "invoke", "build", "twine" ]
+
+[tool.pydev]
+allow-publish=true
 
 [tool.hatch.build]
 packages = ["src/where"]
