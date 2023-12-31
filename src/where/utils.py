@@ -7,7 +7,7 @@ from .dirtree import print_tree
 
 
 def where_module(name, recurse=False):
-    """ Locate and display module location/contents """
+    """Locate and display module location/contents"""
 
     name = name.replace("-", "_")
 

@@ -10,7 +10,7 @@ from .utils import where_module
 @click.argument("module", nargs=1)
 @click.option("-r", "--recurse", is_flag=True, help="Recurse into directory contents")
 def main(module, recurse=False):
-    """ Locate python module or resources in the python path
+    """Locate python module or resources in the python path
 
     MODULE is the name of a module or package as a fully qualified python name
     """
