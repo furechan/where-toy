@@ -1,45 +1,38 @@
 # Utility to locate python modules from the command line 
 
-Python utility to locate any module in the python path.
+Python utility to locate packages or resources in the python path.
 The module is a thin layer around ```importlib``` to display
-the location and containing folders of a module or package.
+the location and contents of an installed module or package.
 The script exits with an error code if the module is not found.
 
-> **Warning**
-This project installs a module called ```where```
-which name is also used by other projects like
-[where](https://pypi.org/project/where/).
-Make sure to install the one you are looking for!
 
 ## Usage
 
-Used from the command line by invoking ```python -mwhere module```
-
 ```console
-python -mwhere [-h] [-t] module
+Usage: python -m where [OPTIONS] MODULE
 
-positional arguments:
-  module         module or package name
+  Locate python module or resources in the python path
 
-optional arguments:
-  -h, --help     show this help message and exit
-  -t, --tree     print package contents as a tree
+  MODULE is the name of a module or package as a fully qualified
+  python name
+
+Options:
+  -r, --recurse  Recurse into directory contents
+  --help         Show this message and exit.
 ```
-
-Please note the `-t` option to print the package contents as a tree.
 
 
 ## Examples
 
 ```console
-$> python -mwhere sysconfig 
-/Users/bob/envs/py38/lib/sysconfig.py
+> python -mwhere sysconfig 
+/Users/.../envs/py38/lib/sysconfig.py
 
-$> python -mwhere pandas      
-/Users/bob/envs/py38/lib/site-packages/pandas/__init__.py
+> python -mwhere pandas      
+/Users/.../envs/py38/lib/site-packages/pandas/__init__.py
 
-$> python -mwhere where -t 
-/Users/bob/Projects/Python/where-toy/src/where
+> python -mwhere where -r
+/Users/../Projects/where-toy/src/where
 ├── __init__.py
 ├── __main__.py
 └── utils.py
@@ -47,9 +40,14 @@ $> python -mwhere where -t
 
 ## Installation
 
+> **Warning**
+This project installs a module called ```where```
+which name is also used by other projects like
+[where](https://pypi.org/project/where/).
+
 You can install the latest version of this module with pip
 
 ```console
-pip3 install git+https://github.com/furechan/where-toy.git
+pip install git+https://github.com/furechan/where-toy.git
 ```
 

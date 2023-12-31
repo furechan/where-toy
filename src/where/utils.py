@@ -1,53 +1,37 @@
 """ Utility to locate python modules """
 
-import sys
 import importlib.util
-
-from pathlib import Path
+import importlib.resources
 
 from .dirtree import print_tree
 
 
-def search_path(*patterns):
-    """ first file/folder in python path that matches any of the patterns """
-
-    for folder in sys.path:
-        folder = Path(folder)
-        if not folder.is_dir():
-            continue
-        for file in Path(folder).iterdir():
-            if any(file.match(pattern) for pattern in patterns):
-                return file
-
-    return None
-
-
-def search_path_hook(name: str):
-    return search_path(f"{name}.pth", f"{name}-*.pth", f"__editable__.{name}-*.pth")
-
-
-def search_dist_infp(name: str):
-    return search_path(f"{name}-*.dist-info")
-
-
-def where_module(name, tree=False):
-    """ locates and displays module location/contents """
+def where_module(name, recurse=False):
+    """ Locate and display module location/contents """
 
     name = name.replace("-", "_")
+
+    if recurse:
+        path = importlib.resources.files(name)
+
+        if not path:
+            print(f"Package/module {name!r} not found!")
+            return None
+
+        print_tree(path)
+        return
 
     spec = importlib.util.find_spec(name)
 
     if not spec:
-        print("%s not found!" % name)
+        print(f"Package/module {name!r} not found!")
         return None
 
-    if tree and spec.submodule_search_locations:
-        for path in spec.submodule_search_locations:
-            path = Path(path)
-            print_tree(path)
+    if spec.origin:
+        print(spec.origin)
 
-    elif spec.origin:
-        file = Path(spec.origin)
-        print(file)
+    if spec.submodule_search_locations:
+        for path in spec.submodule_search_locations:
+            print(path)
 
     return spec

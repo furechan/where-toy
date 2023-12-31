@@ -1,21 +1,21 @@
 """ Utility to locate python modules from the command line """
 
 import sys
-import argparse
+import click
 
 from .utils import where_module
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__, prog='python -mwhere')
-    parser.add_argument('-t', '--tree', action='store_true', help="print package contents as a tree")
-    parser.add_argument('module', help="module or package name")
+@click.command
+@click.argument("module", nargs=1)
+@click.option("-r", "--recurse", is_flag=True, help="Recurse into directory contents")
+def main(module, recurse=False):
+    """ Locate python module or resources in the python path
 
-    options = parser.parse_args()
+    MODULE is the name of a module or package as a fully qualified python name
+    """
 
-    if not where_module(
-            options.module,
-            tree=options.tree):
+    if not where_module(module, recurse=recurse):
         sys.exit(1)
 
 

@@ -1,12 +1,12 @@
-""" Utility to print a directory as a tree """
-
-from pathlib import Path
+""" Utility to print a directory recursively as a tree """
 
 INNER1, INNER2 = '├──', '│   '
 LAST1, LAST2 = '└──', '    '
 
 
-def print_tree(path: Path, prefix: str = '', inner: str = ''):
+def print_tree(path, prefix: str = '', inner: str = ''):
+    """ Print a directory recursively as a tree """
+
     if prefix:
         print(prefix + " " + path.name)
     else:
