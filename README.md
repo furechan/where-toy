@@ -4,7 +4,8 @@ Python utility to locate packages or resources in the python path.
 The module is a thin layer around ```importlib``` to display
 the location and contents of an installed module or package.
 The script exits with an error code if the module is not found.
-
+This is similar to `python -minspect <name> -d` but adds the option
+to display the package contents as a tree.
 
 ## Usage
 
@@ -51,3 +52,6 @@ You can install the latest version of this module with pip
 pip install git+ssh://git@github.com/furechan/where-toy.git
 ```
 
+## Related Projects & Resources
+- [pyloc](https://github.com/nicolasdespres/pyloc) Locate python object definition in your file-system
+- [inspect](https://docs.python.org/3/library/inspect.html#command-line-interface) inspect module command line interface
