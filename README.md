@@ -1,7 +1,7 @@
 # Utility to locate python modules from the command line 
 
 Python utility to locate packages or resources in the python path.
-The module is a thin layer around ```importlib``` to display
+The module is a thin layer around `importlib` to display
 the location and contents of an installed module or package.
 The script exits with an error code if the module is not found.
 This is similar to `python -minspect <name> -d` but adds the option
@@ -46,7 +46,7 @@ This project installs a module called ```where```
 which name is also used by other projects like
 [where](https://pypi.org/project/where/).
 
-You can install the latest version of this module with pip
+You can install the latest version of this module with `pip
 
 ```console
 pip install git+ssh://git@github.com/furechan/where-toy.git
