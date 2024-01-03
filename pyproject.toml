@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "where-toy"
-version = "0.0.9"
+version = "0.0.10"
 requires-python = ">=3.9"
 description = "Utility to locate python modules from the command line"
 keywords = ["utility", "command-line"]
