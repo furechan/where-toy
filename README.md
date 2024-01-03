@@ -42,7 +42,7 @@ Options:
 ## Installation
 
 > **Warning**
-This project installs a module called ```where```
+This project installs a module called `where`
 which name is also used by other projects like
 [where](https://pypi.org/project/where/).
 
