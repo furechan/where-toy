@@ -48,6 +48,6 @@ which name is also used by other projects like
 You can install the latest version of this module with pip
 
 ```console
-pip install git+https://github.com/furechan/where-toy.git
+pip install git+ssh://git@github.com/furechan/where-toy.git
 ```
 
